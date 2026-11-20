@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: fr
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "robes"
+    label: "Robes"
+    file: "products.json"
+    description: "Tes robes. Tu peux ajouter une robe, changer la photo, le texte, les prix et le lien pour payer."
+    fields:
+      - label: "Robes"
+        name: "robes"
+        widget: "list"
+        fields:
+          - { label: "Nom de la robe", name: "nom", widget: "string" }
+          - { label: "Photo", name: "photo", widget: "image" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Tailles et prix"
+            name: "tailles"
+            widget: "list"
+            fields:
+              - { label: "Taille", name: "taille", widget: "string", hint: "Exemple : 0 - 12 mois" }
+              - { label: "Prix en dinars", name: "prix_da", widget: "string", hint: "Exemple : 3800" }
+              - { label: "Prix en euros", name: "prix_eur", widget: "string", hint: "Exemple : 33" }
+          - { label: "Lien pour payer", name: "lien_paiement", widget: "string", required: false, hint: "Colle ici ton lien de paiement. Si tu n'en mets pas, les clientes commandent sur WhatsApp." }
