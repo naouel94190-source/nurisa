@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nurisa — Robes kabyles pour enfants</title>
+<meta name="description" content="Nurisa — robes kabyles pour enfants. La robe Celina, en satin avec galon kabyle. Faite sur commande, en Algérie et en France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #171013; color: #EFE3D3; font-family: 'Poppins', sans-serif; line-height: 1.6; }
+  a { color: inherit; }
+  header { text-align: center; padding: 60px 20px 40px; }
+  header .logo { font-family: 'Playfair Display', serif; font-size: 52px; color: #C3B898; letter-spacing: 4px; }
+  header p.sous-titre { color: #D7C6B0; margin-top: 8px; font-size: 17px; }
+  .phrase { max-width: 640px; margin: 30px auto 0; font-family: 'Playfair Display', serif; font-size: 24px; color: #EFE3D3; line-height: 1.5; }
+  .phrase span { color: #C3B898; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px; }
+  h2 { font-family: 'Playfair Display', serif; color: #C3B898; font-size: 30px; text-align: center; margin: 50px 0 10px; }
+  .intro { text-align: center; color: #D7C6B0; max-width: 600px; margin: 0 auto 30px; }
+  .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .carte { background: #241a20; border: 1px solid #3a2c33; border-radius: 16px; overflow: hidden; }
+  .carte img { width: 100%; height: 340px; object-fit: cover; display: block; }
+  .carte .corps { padding: 20px; }
+  .carte h3 { font-family: 'Playfair Display', serif; color: #C3B898; font-size: 24px; margin-bottom: 8px; }
+  .carte p { color: #EFE3D3; font-size: 15px; margin-bottom: 14px; }
+  .prix { list-style: none; margin-bottom: 16px; }
+  .prix li { display: flex; justify-content: space-between; border-bottom: 1px solid #3a2c33; padding: 8px 0; font-size: 15px; }
+  .prix li b { color: #C3B898; }
+  .bouton { display: block; text-align: center; text-decoration: none; background: #C3B898; color: #171013; font-weight: 600; padding: 13px; border-radius: 10px; margin-top: 10px; }
+  .bouton.secondaire { background: transparent; border: 1px solid #C3B898; color: #C3B898; }
+  .etapes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .etape { background: #241a20; border: 1px solid #3a2c33; border-radius: 14px; padding: 20px; text-align: center; }
+  .etape .numero { font-family: 'Playfair Display', serif; font-size: 34px; color: #C3B898; }
+  .etape p { font-size: 15px; margin-top: 6px; }
+  .delais { background: #241a20; border: 1px solid #3a2c33; border-radius: 14px; padding: 24px; text-align: center; margin-top: 24px; color: #EFE3D3; }
+  footer { text-align: center; padding: 40px 20px 50px; color: #D7C6B0; font-size: 14px; }
+  footer a { color: #C3B898; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NURISA</div>
+  <p class="sous-titre">Robes kabyles pour enfants — faites avec amour</p>
+  <p class="phrase">« C'est pour ça que j'ai créé Nurisa. Pas juste des robes. <span>Un héritage qu'on porte.</span> »</p>
+</header>
+
+<main>
+  <h2>Nos robes</h2>
+  <p class="intro">Chaque robe est faite sur commande, sur mesure, pour ta fille. Robe kabyle, satin, galon kabyle.</p>
+  <div class="grille" id="robes"></div>
+
+  <h2>Comment commander</h2>
+  <div class="etapes">
+    <div class="etape"><div class="numero">1</div><p>Choisis la robe et la taille de ta fille.</p></div>
+    <div class="etape"><div class="numero">2</div><p>Écris-nous sur WhatsApp avec son âge.</p></div>
+    <div class="etape"><div class="numero">3</div><p>On te répond, et ta robe est faite pour elle.</p></div>
+  </div>
+
+  <div class="delais">
+    <strong>Les délais :</strong> Algérie 2 à 3 jours (max 1 semaine), France / Europe 1 à 2 semaines selon les périodes, in cha Allah.
+  </div>
+</main>
+
+<footer>
+  <p>Nurisa — My Little Caftan DZ</p>
+  <p>Instagram : <a href="https://www.instagram.com/my_little_caftan_dz" target="_blank" rel="noopener">@my_little_caftan_dz</a></p>
+  <p style="margin-top:10px;">WhatsApp : <a href="https://wa.me/33764242835" target="_blank" rel="noopener">+33 7 64 24 28 35</a></p>
+</footer>
+
+<script>
+fetch('products.json')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    var zone = document.getElementById('robes');
+    data.robes.forEach(function (robe) {
+      var carte = document.createElement('article');
+      carte.className = 'carte';
+      var html = '';
+      if (robe.photo) { html += '<img src="' + robe.photo + '" alt="' + robe.nom + '">'; }
+      html += '<div class="corps">';
+      html += '<h3>' + robe.nom + '</h3>';
+      if (robe.description) { html += '<p>' + robe.description + '</p>'; }
+      if (robe.tailles && robe.tailles.length) {
+        html += '<ul class="prix">';
+        robe.tailles.forEach(function (t) {
+          html += '<li><span>' + t.taille + '</span><b>' + t.prix_da + ' DA / ' + t.prix_eur + ' €</b></li>';
+        });
+        html += '</ul>';
+      }
+      if (robe.lien_paiement) {
+        html += '<a class="bouton" href="' + robe.lien_paiement + '" target="_blank" rel="noopener">Payer</a>';
+      }
+      html += '<a class="bouton secondaire" href="https://wa.me/33764242835?text=' + encodeURIComponent('Salam, je veux la robe ' + robe.nom + ' pour ma fille.') + '" target="_blank" rel="noopener">Commander sur WhatsApp</a>';
+      html += '</div>';
+      carte.innerHTML = html;
+      zone.appendChild(carte);
+    });
+  });
+</script>
+
+</body>
+</html>

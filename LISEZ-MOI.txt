@@ -1,0 +1,49 @@
+TA BASE DE SITE — NURISA
+=====================
+
+C'est quoi ?
+C'est ton site, prêt à mettre en ligne. La robe Celina est déjà dedans,
+avec ses photos et ses prix. Tu peux ajouter d'autres robes toi-même.
+
+Ce qu'il y a dans le dossier :
+- index.html : la page de ton site.
+- products.json : tes robes, tes prix.
+- assets : les photos de la robe Celina.
+- admin : la page où tu te connectes pour changer ton site.
+
+COMMENT METTRE TON SITE EN LIGNE, GRATUITEMENT
+===============================================
+
+Étape 1 — GitHub (gratuit)
+Va sur github.com. Crée un compte gratuit.
+Crée un nouveau dépôt (bouton « New »). Mets-lui le nom « nurisa ».
+Glisse tous les fichiers de ce dossier dedans.
+
+Étape 2 — Netlify (gratuit)
+Va sur netlify.com. Crée un compte gratuit.
+Clique « Add new site », puis « Import an existing project ».
+Choisis GitHub, puis choisis ton dépôt « nurisa ».
+Clique « Deploy ». Tu as ton lien, par exemple nurisa.netlify.app.
+
+Étape 3 — Pour te connecter et changer ton site
+Sur Netlify, va dans « Site settings », puis « Identity ».
+Clique « Enable Identity ».
+Puis va dans « Services », « Git Gateway », clique « Enable ».
+Après ça, va sur ton-site.netlify.app/admin
+Tu te connectes avec ton e-mail. Netlify t'envoie une invitation par e-mail.
+
+COMMENT AJOUTER UNE ROBE
+========================
+Va sur ton-site.netlify.app/admin. Connecte-toi.
+Clique sur « Robes », puis « New Robes » ou « + ».
+Tu mets la photo, le nom, la description, les tailles et les prix.
+Dans « Lien pour payer », tu colles ton lien de paiement.
+Si tu n'en mets pas, les clientes commandent sur WhatsApp.
+Clique « Publish ». Le site se met à jour tout seul.
+
+La robe Celina est déjà dedans :
+- 0 - 12 mois : 3800 DA / 33 €
+- 18 mois - 4 ans : 4800 DA / 38 €
+- 6 - 12 ans : 5200 DA / 52 €
+
+WhatsApp pour commander : +33 7 64 24 28 35
