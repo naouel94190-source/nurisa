@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Serif;src:url(PlayfairDisplay-400.woff);font-style:normal}
+@font-face{font-family:Serif;src:url(PlayfairDisplay-400i.woff);font-style:italic}
+@font-face{font-family:Texte;src:url(Poppins-600.woff);font-weight:600}
+html,body{margin:0;background:#EFE7DA}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;color:#3B2F25;font-family:Texte;background-color:#EFE7DA;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%238C7A63%27%20stroke-opacity%3D%270.16%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%279%27/%3E%3Cpath%20d%3D%27M120%2020%20l12%2022%20h-24%20z%27/%3E%3Cpath%20d%3D%27M168%2048%20c-8-10-22%200-12%2010%20l12%2012%20l12-12%20c10-10-4-20-12-10z%27/%3E%3Cpath%20d%3D%27M40%20120%20q12-18%2024%200%20t24%200%27/%3E%3Crect%20x%3D%27118%27%20y%3D%27112%27%20width%3D%2726%27%20height%3D%2720%27%20rx%3D%274%27/%3E%3Cpath%20d%3D%27M160%20150%20l10-10%20l10%2010%20l-10%2010z%27/%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%27178%27%20r%3D%274%27/%3E%3Cpath%20d%3D%27M14%2098%20l8%208%20M14%20106%20l8-8%27/%3E%3Cpath%20d%3D%27M96%2080%20a6%206%200%201%200%200.1%200%27/%3E%3C/g%3E%3C/svg%3E");background-size:200px 200px}
+.label{position:absolute;left:0;right:0;top:110px;text-align:center;font:600 26px Texte;letter-spacing:.14em;color:#7A6550;text-transform:uppercase}
+.top{position:absolute;left:0;right:0;top:200px;text-align:center}
+.av{width:150px;height:150px;margin:0 auto;border-radius:50%;background:linear-gradient(135deg,#C9A86A,#E8C77A);display:flex;align-items:center;justify-content:center;font:italic 400 80px Serif;color:#2B2118}
+.nm{font:600 40px Texte;margin-top:14px}
+.hd{font:600 26px Texte;color:#7A6550;margin-top:4px}
+.phone{position:absolute;left:190px;right:190px;top:520px;bottom:300px;border-radius:96px;background:linear-gradient(160deg,#2A2320,#120E0B);box-shadow:0 40px 90px rgba(59,47,37,.35)}
+.screen{position:absolute;left:22px;right:22px;top:22px;bottom:22px;border-radius:78px;background-color:#EFE7DA;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%238C7A63%27%20stroke-opacity%3D%270.16%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%279%27/%3E%3Cpath%20d%3D%27M120%2020%20l12%2022%20h-24%20z%27/%3E%3Cpath%20d%3D%27M168%2048%20c-8-10-22%200-12%2010%20l12%2012%20l12-12%20c10-10-4-20-12-10z%27/%3E%3Cpath%20d%3D%27M40%20120%20q12-18%2024%200%20t24%200%27/%3E%3Crect%20x%3D%27118%27%20y%3D%27112%27%20width%3D%2726%27%20height%3D%2720%27%20rx%3D%274%27/%3E%3Cpath%20d%3D%27M160%20150%20l10-10%20l10%2010%20l-10%2010z%27/%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%27178%27%20r%3D%274%27/%3E%3Cpath%20d%3D%27M14%2098%20l8%208%20M14%20106%20l8-8%27/%3E%3Cpath%20d%3D%27M96%2080%20a6%206%200%201%200%200.1%200%27/%3E%3C/g%3E%3C/svg%3E");background-size:200px 200px}
+.chat{position:absolute;left:60px;right:60px;top:640px;bottom:330px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.b{max-width:900px;padding:26px 34px;font:600 38px/1.35 Texte;margin:12px 0;opacity:0;box-sizing:border-box;box-shadow:0 10px 30px rgba(59,47,37,.10)}
+.f{align-self:flex-start;background:#DCCDB7;color:#3B2F25;border-radius:38px 38px 38px 10px}
+.l{align-self:flex-end;background:linear-gradient(120deg,#C9A86A,#E8C77A);color:#2B2118;border-radius:38px 38px 10px 38px}
+.q{outline:3px solid #B8914F;outline-offset:4px}
+.typing{align-self:flex-end;display:none;padding:22px 30px;border-radius:38px 38px 10px 38px;background:#E8C77A;margin:12px 0}
+.typing i{display:inline-block;width:14px;height:14px;margin:0 5px;border-radius:50%;background:#2B2118;opacity:.3}
+.notif{position:absolute;left:60px;right:60px;top:-200px;padding:24px 30px;border-radius:30px;background:rgba(255,255,255,.92);box-shadow:0 12px 40px rgba(59,47,37,.18);font:600 32px/1.3 Texte;color:#3B2F25;opacity:0}
+.closing{position:absolute;left:90px;right:90px;top:520px;text-align:center;opacity:0}
+.cl1{font:italic 400 92px/1.15 Serif;color:#3B2F25}
+.page2{position:absolute;left:0;right:0;top:0;bottom:0;background:#F4EDE2;opacity:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 110px;box-sizing:border-box}
+.p2a{font:italic 400 110px/1.1 Serif;color:#3B2F25}
+.p2b{font:600 44px/1.5 Texte;color:#5C4A3A;margin-top:50px}
+.cl2{font:600 42px/1.4 Texte;color:#5C4A3A;margin-top:70px}
+.cl3{font:600 52px/1.3 Texte;color:#8A6A3A;margin-top:40px}
+</style></head>
+<body>
+<div id="stage">
+  <div class="label">Épisode 1</div>
+  <div class="top"><div class="av">S&amp;C</div><div class="nm">Sarah &amp; Camila</div><div class="hd">maman facless</div></div>
+  <div class="notif" data-n>Nouveau message de Camila</div>
+  <div class="chat" id="chat"><div class="typing" id="typing"><i></i><i></i><i></i></div></div>
+  <div class="page2" id="page2"><div class="p2a">Personnages fictifs</div><div class="p2b">Sarah et Camila sont des personnages inventés pour cette série.</div></div>
+  <div class="closing" id="closing">
+    <div class="cl1" id="cl1">Sarah va découvrir la suite demain...</div>
+    
+    
+  </div>
+</div>
+<script src="sc1_timing.js"></script>
+<script>
+const stage = document.getElementById('stage');
+const chat = document.getElementById('chat');
+const typing = document.getElementById('typing');
+const typingS = document.createElement('div');
+typingS.className = 'typing'; typingS.style.alignSelf = 'flex-start'; typingS.style.background = '#DCCDB7';
+typingS.innerHTML = '<i></i><i></i><i></i>';
+chat.insertBefore(typingS, typing);
+const notif = document.querySelector('[data-n]');
+const closing = document.getElementById('closing');
+const clamp = (x, a=0, b=1) => Math.min(b, Math.max(a, x));
+const P = (t, a, b) => clamp((t - a) / (b - a));
+const SFX = [];
+const sfx = (t, f, v) => SFX.push([+t.toFixed(3), f, v]);
+const QUESTION = m => m.includes('?');
+// bulles créées une fois
+const bubbles = DM.events.map(e => {
+  const d = document.createElement('div');
+  d.className = 'b ' + (e.who === 'S' ? 'f' : 'l') + (e.who === 'S' && QUESTION(e.text) ? ' q' : '');
+  d.textContent = e.text;
+  chat.insertBefore(d, typing);
+  return d;
+});
+// sons : notification à chaque message reçu, frappe pendant les réponses de Lynda
+DM.events.forEach((e, i) => {
+  // pas de son pour cet épisode
+});
+window.SFX = SFX;
+window.TOTAL = DM.total;
+window.SFX = [];
+DM.events.forEach(e => {
+  if (e.who === 'S') {
+    const chars = [...e.text];
+    let k = 0;
+    chars.forEach((ch, i) => {
+      if (ch === ' ') return;
+      const at = e.tstart + (i + 1) * (e.tdur / chars.length) - 0.03;
+      window.SFX.push([+at.toFixed(3), 'key' + (1 + (k * 7) % 3), 0.45]);
+      k++;
+    });
+  }
+  // Sarah reçoit les messages de Camila : une notification à chaque message de Camila
+  if (e.who === 'C') {
+    window.SFX.push([e.show, 'chime', 0.6]);
+    const n = Math.floor(e.tdur / 0.16);
+    for (let k = 0; k < n; k++) window.SFX.push([+(e.tstart + 0.12 + k * 0.16).toFixed(3), 'key' + (1 + (k * 7) % 3), 0.55]);
+  }
+});
+window.render = function (t) {
+  DM.events.forEach((e, i) => {
+    const on = t >= e.show;
+    if (e.who === 'S') {
+      const chars = [...e.text];
+      const started = t >= e.tstart;
+      const shown = (t >= e.show) ? chars.length : Math.floor(P(t, e.tstart, e.show) * chars.length);
+      bubbles[i].textContent = chars.slice(0, shown).join('');
+      bubbles[i].style.opacity = started ? 1 : 0;
+      bubbles[i].style.display = started && shown > 0 ? 'block' : 'none';
+    } else {
+      bubbles[i].style.opacity = on ? 1 : 0;
+      bubbles[i].style.display = on ? 'block' : 'none';
+    }
+  });
+  // indicateur de saisie : seulement pendant la réponse de Lynda
+  const cur = DM.events.find(e => e.who === 'C' && t >= e.tstart && t < e.show);
+  typing.style.display = cur ? 'block' : 'none';
+  if (cur) typing.querySelectorAll('i').forEach((d, k) => d.style.opacity = 0.2 + 0.6 * (0.5 + 0.5 * Math.sin((t * 8) - k)));
+  const curS = DM.events.find(e => e.who === 'S' && t >= e.tstart && t < e.show);
+  typingS.style.display = 'none';
+  // notification : 1,6 s à la réception
+  const nf = DM.events.find(e => e.who === 'C' && t >= e.show && t < e.show + 1.8);
+  const ny = nf ? P(t, nf.show, nf.show + 0.35) : 0;
+  const nout = nf ? P(t, nf.show + 1.4, nf.show + 1.8) : 0;
+  notif.style.opacity = nf ? (ny * (1 - nout)) : 0;
+  notif.style.transform = `translateY(${nf ? (1 - ny) * 260 : 0}px)`;
+  // fin : phrase finale
+  const cs = DM.closing.at;
+  chat.style.opacity = t >= cs ? 0 : 1;
+  closing.style.opacity = P(t, cs, cs + 0.8) * (1 - P(t, cs + 3.8, cs + 4.2));
+  document.getElementById('page2').style.opacity = P(t, cs + 4.2, cs + 4.7);
+};
+window.render(0);
+</script></body></html>

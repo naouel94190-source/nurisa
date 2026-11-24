@@ -1,0 +1,121 @@
+{
+ "events": [
+  {
+   "who": "S",
+   "text": "Salam Camila ! Tu es où ? Les enfants ont enfin dormi, je peux respirer 5 minutes.",
+   "tstart": 1.8,
+   "show": 4.3,
+   "tdur": 2.5
+  },
+  {
+   "who": "C",
+   "text": "Wa alayki salam ! Je suis dans le canapé, j'ai une nouvelle à te dire.",
+   "tstart": 8.08,
+   "show": 10.58,
+   "tdur": 2.5
+  },
+  {
+   "who": "S",
+   "text": "Ah ? Tu as déménagé ?",
+   "tstart": 14.37,
+   "show": 15.47,
+   "tdur": 1.1
+  },
+  {
+   "who": "C",
+   "text": "Non ! Je me suis lancée dans une formation. En ligne, depuis chez moi.",
+   "tstart": 17.12,
+   "show": 19.28,
+   "tdur": 2.17
+  },
+  {
+   "who": "S",
+   "text": "Une formation de quoi ?",
+   "tstart": 22.62,
+   "show": 23.72,
+   "tdur": 1.1
+  },
+  {
+   "who": "C",
+   "text": "Marketing digital. Je sais, ça sonne bizarre.",
+   "tstart": 25.37,
+   "show": 26.54,
+   "tdur": 1.17
+  },
+  {
+   "who": "S",
+   "text": "Ça sonne surtout loin de nous. Tu as déjà fait quoi dans ce domaine ?",
+   "tstart": 28.54,
+   "show": 30.88,
+   "tdur": 2.33
+  },
+  {
+   "who": "C",
+   "text": "Rien encore ! Je commence juste. Je ne suis pas experte, et je ne te dis pas que je gagne déjà de l'argent.",
+   "tstart": 34.44,
+   "show": 38.27,
+   "tdur": 3.83
+  },
+  {
+   "who": "S",
+   "text": "Franchement, tu as du courage. Moi je fais le ménage, les devoirs, les repas… et le soir je me demande ce que j'ai fait de moi.",
+   "tstart": 43.83,
+   "show": 48.33,
+   "tdur": 4.5
+  },
+  {
+   "who": "C",
+   "text": "Je te comprends. Il y a des jours où je me disais exactement la même chose.",
+   "tstart": 54.78,
+   "show": 57.45,
+   "tdur": 2.67
+  },
+  {
+   "who": "S",
+   "text": "Et tes enfants ? Tu n'as pas peur que ça prenne sur leur temps ?",
+   "tstart": 61.46,
+   "show": 63.79,
+   "tdur": 2.33
+  },
+  {
+   "who": "C",
+   "text": "Si, bien sûr. J'ai choisi des créneaux après leur coucher et je le leur explique. C'est un équilibre à trouver, inchaAllah.",
+   "tstart": 67.35,
+   "show": 71.18,
+   "tdur": 3.83
+  },
+  {
+   "who": "S",
+   "text": "Tu as l'air sereine. Moi je pense que c'est trop tard pour moi, je n'ai ni diplôme ni expérience.",
+   "tstart": 76.74,
+   "show": 80.41,
+   "tdur": 3.67
+  },
+  {
+   "who": "C",
+   "text": "Je pensais ça aussi. Le plus dur, c'est de commencer, pas d'avoir déjà tout compris.",
+   "tstart": 85.75,
+   "show": 88.58,
+   "tdur": 2.83
+  },
+  {
+   "who": "S",
+   "text": "Dis-moi au moins, c'est quoi le marketing digital ? Là je suis perdue.",
+   "tstart": 92.81,
+   "show": 95.14,
+   "tdur": 2.33
+  },
+  {
+   "who": "C",
+   "text": "Je te raconte demain, promis. Ça va te faire sourire.",
+   "tstart": 98.71,
+   "show": 100.37,
+   "tdur": 1.67
+  }
+ ],
+ "closing": {
+  "at": 102.84,
+  "hold": 8.0
+ },
+ "total": 111.34
+}
