@@ -16,7 +16,9 @@
   header p.sous-titre { color: #D7C6B0; margin-top: 8px; font-size: 17px; }
   .sequence { display: grid; max-width: 640px; min-height: 120px; margin: 30px auto 0; font-family: 'Playfair Display', serif; font-size: 24px; color: #EFE3D3; line-height: 1.5; }
   .sequence p { grid-area: 1 / 1; opacity: 0; animation: fondu 2.8s ease-in-out forwards; animation-delay: calc(var(--i) * 2.8s); }
-  .sequence p.final { animation: apparait 1.2s ease-out forwards; animation-delay: calc(var(--i) * 2.8s); }
+  .sequence .logo-final { grid-area: 1 / 1; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0; animation: rebond 1s cubic-bezier(.3,.7,.4,1) forwards; animation-delay: calc(var(--i) * 2.8s); }
+  .logo-final svg { width: 64px; height: 64px; animation: couleurs 6s linear infinite; }
+  .logo-final .identifiant { font-family: 'Poppins', sans-serif; font-size: 16px; color: #D7C6B0; text-decoration: none; opacity: 0; animation: monte .6s ease-out forwards; animation-delay: calc(var(--i) * 2.8s + .8s); }
   .sequence span { color: #C3B898; }
   @keyframes fondu {
     0% { opacity: 0; transform: translateY(8px); }
@@ -24,13 +26,25 @@
     80% { opacity: 1; }
     100% { opacity: 0; }
   }
-  @keyframes apparait {
+  @keyframes rebond {
+    0% { opacity: 0; transform: scale(.3); }
+    50% { opacity: 1; transform: scale(1.15); }
+    70% { transform: scale(.92); }
+    85% { transform: scale(1.04); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes monte {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: none; }
   }
+  @keyframes couleurs {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+  }
   @media (prefers-reduced-motion: reduce) {
     .sequence p { animation: none; opacity: 0; }
-    .sequence p.final { animation: none; opacity: 1; }
+    .sequence p:last-of-type { opacity: 0; }
+    .sequence .logo-final, .logo-final svg, .logo-final .identifiant { animation: none; opacity: 1; }
   }
   main { max-width: 980px; margin: 0 auto; padding: 20px; }
   h2 { font-family: 'Playfair Display', serif; color: #C3B898; font-size: 30px; text-align: center; margin: 50px 0 10px; }
@@ -64,7 +78,22 @@
     <p style="--i:0">Chaque robe commence par une envie.</p>
     <p style="--i:1">Celle d'une fête, d'une famille, d'une tradition.</p>
     <p style="--i:2">Faite pour ta fille, à ta mesure.</p>
-    <p class="final" style="--i:3"><span>Un héritage qu'on porte.</span></p>
+    <p style="--i:3">Un héritage qu'on porte.</p>
+    <a class="logo-final" style="--i:4" href="https://www.instagram.com/my_little_caftan_dz" target="_blank" rel="noopener" aria-label="Nurisa sur Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="url(#degrade)" stroke-width="1.8" aria-hidden="true">
+        <defs>
+          <linearGradient id="degrade" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#F58529"/>
+            <stop offset="50%" stop-color="#DD2A7B"/>
+            <stop offset="100%" stop-color="#8134AF"/>
+          </linearGradient>
+        </defs>
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+        <circle cx="12" cy="12" r="4.4"/>
+        <circle cx="17.3" cy="6.7" r="1" fill="url(#degrade)" stroke="none"/>
+      </svg>
+      <span class="identifiant">@my_little_caftan_dz</span>
+    </a>
   </div>
 </header>
 
