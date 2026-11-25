@@ -14,8 +14,24 @@
   header { text-align: center; padding: 60px 20px 40px; }
   header .logo { font-family: 'Playfair Display', serif; font-size: 52px; color: #C3B898; letter-spacing: 4px; }
   header p.sous-titre { color: #D7C6B0; margin-top: 8px; font-size: 17px; }
-  .phrase { max-width: 640px; margin: 30px auto 0; font-family: 'Playfair Display', serif; font-size: 24px; color: #EFE3D3; line-height: 1.5; }
-  .phrase span { color: #C3B898; }
+  .sequence { display: grid; max-width: 640px; min-height: 120px; margin: 30px auto 0; font-family: 'Playfair Display', serif; font-size: 24px; color: #EFE3D3; line-height: 1.5; }
+  .sequence p { grid-area: 1 / 1; opacity: 0; animation: fondu 2.8s ease-in-out forwards; animation-delay: calc(var(--i) * 2.8s); }
+  .sequence p.final { animation: apparait 1.2s ease-out forwards; animation-delay: calc(var(--i) * 2.8s); }
+  .sequence span { color: #C3B898; }
+  @keyframes fondu {
+    0% { opacity: 0; transform: translateY(8px); }
+    15% { opacity: 1; transform: none; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes apparait {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sequence p { animation: none; opacity: 0; }
+    .sequence p.final { animation: none; opacity: 1; }
+  }
   main { max-width: 980px; margin: 0 auto; padding: 20px; }
   h2 { font-family: 'Playfair Display', serif; color: #C3B898; font-size: 30px; text-align: center; margin: 50px 0 10px; }
   .intro { text-align: center; color: #D7C6B0; max-width: 600px; margin: 0 auto 30px; }
@@ -44,7 +60,12 @@
 <header>
   <div class="logo">NURISA</div>
   <p class="sous-titre">Robes kabyles pour enfants — faites avec amour</p>
-  <p class="phrase">« C'est pour ça que j'ai créé Nurisa. Pas juste des robes. <span>Un héritage qu'on porte.</span> »</p>
+  <div class="sequence">
+    <p style="--i:0">Chaque robe commence par une envie.</p>
+    <p style="--i:1">Celle d'une fête, d'une famille, d'une tradition.</p>
+    <p style="--i:2">Faite pour ta fille, à ta mesure.</p>
+    <p class="final" style="--i:3"><span>Un héritage qu'on porte.</span></p>
+  </div>
 </header>
 
 <main>
